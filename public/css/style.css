@@ -10003,3 +10003,16 @@ h3 {
     border-color: #dee2e6;
   }
 }
+li {
+  list-style: none;
+  color: #17a2b8;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  color: #4ace6c;
+  text-decoration: none;
+}
+
+h3 {
+  color: #005cbf;
+}

@@ -5,11 +5,234 @@
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./render */ "./src/render.js");
+/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./list */ "./src/list.js");
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 
-console.log('test');
+
+ // Output
+
+(0,_render__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+/***/ }),
+
+/***/ "./src/data.js":
+/*!*********************!*\
+  !*** ./src/data.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var books = [{
+  'Fantastine': [{
+    'ISBN': '1',
+    'Leidimo metai': '2021',
+    'Pavadinimas': 'Pninas',
+    'Puslapiu skaicius': '165',
+    'Kaina': '30'
+  }, {
+    'ISBN': '2',
+    'Leidimo metai': '2014',
+    'Pavadinimas': 'Žolynas. Žvėrynas',
+    'Puslapiu skaicius': '165',
+    'Kaina': '45'
+  }, {
+    'ISBN': '3',
+    'Leidimo metai': '2013',
+    'Pavadinimas': 'Jozefina',
+    'Puslapiu skaicius': '165',
+    'Kaina': '25'
+  }, {
+    'ISBN': '4',
+    'Leidimo metai': '2012',
+    'Pavadinimas': 'Panama labai graži ',
+    'Puslapiu skaicius': '165',
+    'Kaina': '38'
+  }],
+  'Kriminaline': [{
+    'ISBN': '5',
+    'Leidimo metai': '2021',
+    'Pavadinimas': 'Kometa artėja!',
+    'Puslapiu skaicius': '165',
+    'Kaina': '31'
+  }, {
+    'ISBN': '6',
+    'Leidimo metai': '2011',
+    'Pavadinimas': 'Gimtadienis su Žvirbliu',
+    'Puslapiu skaicius': '165',
+    'Kaina': '22'
+  }, {
+    'ISBN': '7',
+    'Leidimo metai': '2010',
+    'Pavadinimas': 'Ponas Repečkius vėl tarp draugų',
+    'Puslapiu skaicius': '165',
+    'Kaina': '24'
+  }, {
+    'ISBN': '8',
+    'Leidimo metai': '2008',
+    'Pavadinimas': 'Džiovintas debesėlis',
+    'Puslapiu skaicius': '165',
+    'Kaina': '33'
+  }],
+  'Grozine': [{
+    'ISBN': '9',
+    'Leidimo metai': '2009',
+    'Pavadinimas': 'Madingiausias krokodilas',
+    'Puslapiu skaicius': '165',
+    'Kaina': '42'
+  }, {
+    'ISBN': '10',
+    'Leidimo metai': '2001',
+    'Pavadinimas': 'Berniukas ir žuvėdros',
+    'Puslapiu skaicius': '165',
+    'Kaina': '25'
+  }, {
+    'ISBN': '11',
+    'Leidimo metai': '2001',
+    'Pavadinimas': 'Pūkuotuko pasaulis',
+    'Puslapiu skaicius': '165',
+    'Kaina': '56'
+  }, {
+    'ISBN': '12',
+    'Leidimo metai': '2019',
+    'Pavadinimas': 'Ponas Klingzoras truputį mokėjo burti',
+    'Puslapiu skaicius': '165',
+    'Kaina': '36'
+  }]
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (books);
+
+/***/ }),
+
+/***/ "./src/list.js":
+/*!*********************!*\
+  !*** ./src/list.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Genre": () => (/* binding */ Genre),
+/* harmony export */   "bData": () => (/* binding */ bData)
+/* harmony export */ });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./src/data.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+var Genre = function Genre(Category) {
+  Category = [];
+
+  var _iterator = _createForOfIteratorHelper(_data__WEBPACK_IMPORTED_MODULE_0__["default"]),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var object = _step.value;
+
+      for (var multiObject in object) {
+        Category.push(multiObject);
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return Category;
+};
+
+var bData = function bData(data) {
+  data = [];
+
+  var _iterator2 = _createForOfIteratorHelper(_data__WEBPACK_IMPORTED_MODULE_0__["default"]),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var object = _step2.value;
+
+      for (var multiObject in object) {
+        for (var number in object[multiObject]) {
+          for (var property in object[multiObject][number]) {
+            if (object[multiObject][number][property] === '2021') {
+              data.push(property + ": " + object[multiObject][number][property] + " (Nauja knyga)");
+            } else {
+              data.push(property + ": " + object[multiObject][number][property]);
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+
+  return data;
+};
+
+
+
+/***/ }),
+
+/***/ "./src/render.js":
+/*!***********************!*\
+  !*** ./src/render.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./list */ "./src/list.js");
+
+
+var render = function render() {
+  // Genre: Fantastine, Kriminaline, Grozine
+  for (var i = 0; i < 3; i++) {
+    document.getElementsByTagName('button')[i].innerText = (0,_list__WEBPACK_IMPORTED_MODULE_0__.Genre)()[i] + " Literatura"; // Books(4) to each Genre
+
+    var cBody = document.getElementsByClassName('card-body');
+    var ul = document.createElement('ul');
+    cBody[i].appendChild(ul);
+
+    for (var _i = 0; _i < 4; _i++) {
+      var h3 = document.createElement('h3');
+      h3.innerText = 'Knyga ' + '#' + (_i + 1);
+      ul.appendChild(h3);
+
+      for (var j = 0; j < 5; j++) {
+        // Book data for each book in the genre
+        var li = document.createElement('li');
+        ul.appendChild(li);
+      }
+    }
+  }
+
+  for (var _i2 = 0; _i2 < 60; _i2++) {
+    document.getElementsByTagName('li')[_i2].innerText = (0,_list__WEBPACK_IMPORTED_MODULE_0__.bData)()[_i2];
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);
 
 /***/ }),
 
